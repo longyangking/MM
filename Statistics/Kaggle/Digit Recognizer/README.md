@@ -1,4 +1,5 @@
 # Digit Recognizer
+> Score: 0.98186
 
 ## Process
 1. Selection of best PCA based on the score of corresponding SVM
