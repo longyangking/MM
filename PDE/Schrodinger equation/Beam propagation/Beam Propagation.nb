@@ -1,0 +1,1884 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     58690,       1875]
+NotebookOptionsPosition[     53815,       1761]
+NotebookOutlinePosition[     54207,       1778]
+CellTagsIndexPosition[     54164,       1775]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Beam Propagation", "Title",
+ CellChangeTimes->{{3.6875550789276733`*^9, 3.687555084831483*^9}}],
+
+Cell["Yang Long", "Author",
+ CellChangeTimes->{{3.6875555770925117`*^9, 3.687555578276459*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Wave Equation", "Subsubsection",
+ CellChangeTimes->{{3.6875557319089885`*^9, 3.687555737692296*^9}}],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Del]", "\[Cross]", " ", 
+    OverscriptBox["E", "\[RightVector]"]}], "=", 
+   RowBox[{
+    RowBox[{"-", "i"}], " ", "\[Omega]", " ", 
+    SubscriptBox["\[Mu]", "0"], 
+    OverscriptBox["H", "\[RightVector]"]}]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Del]", "\[Cross]", 
+    OverscriptBox["H", "\[RightVector]"]}], "=", 
+   RowBox[{"i", " ", "\[Omega]", " ", 
+    SubscriptBox["\[CurlyEpsilon]", "0"], "\[CurlyEpsilon]", " ", 
+    OverscriptBox["E", "\[RightVector]"]}]}], 
+  TraditionalForm]}], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687555810826665*^9, 3.6875558665589743`*^9}}],
+
+Cell[TextData[{
+ "Propagation direction: ",
+ Cell[BoxData[
+  FormBox["z", TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "TextNoIndent",
+ CellChangeTimes->{{3.687556409352738*^9, 3.6875564192087526`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["TE mode", "Subsubsubsection",
+ CellChangeTimes->{{3.68755590154673*^9, 3.687555903227312*^9}}],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"-", 
+    RowBox[{
+     FractionBox["\[PartialD]", 
+      RowBox[{"\[PartialD]", "z"}]], 
+     SubscriptBox["E", "y"]}]}], "=", 
+   RowBox[{
+    RowBox[{"-", "i"}], " ", "\[Omega]", " ", 
+    SubscriptBox["\[Mu]", "0"], 
+    SubscriptBox["H", "x"]}]}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FractionBox["\[PartialD]", 
+     RowBox[{"\[PartialD]", "x"}]], 
+    SubscriptBox["E", "y"]}], "=", 
+   RowBox[{
+    RowBox[{"-", "i"}], " ", "\[Omega]", " ", 
+    SubscriptBox["\[Mu]", "0"], 
+    SubscriptBox["H", "z"]}]}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     FractionBox["\[PartialD]", 
+      RowBox[{"\[PartialD]", "z"}]], 
+     SubscriptBox["H", "x"]}], "-", 
+    RowBox[{
+     FractionBox["\[PartialD]", 
+      RowBox[{"\[PartialD]", "x"}]], 
+     SubscriptBox["H", "z"]}]}], "=", 
+   RowBox[{"i", " ", "\[Omega]", " ", 
+    SubscriptBox["\[CurlyEpsilon]", "0"], " ", "\[CurlyEpsilon]", " ", 
+    SubscriptBox["E", "y"]}]}], TraditionalForm]}], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687555913267066*^9, 3.6875559514353623`*^9}, {
+  3.6875559895630054`*^9, 3.687556007122806*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["TM mode", "Subsubsubsection",
+ CellChangeTimes->{{3.687556036945589*^9, 3.6875560382182884`*^9}}],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     FractionBox["\[PartialD]", 
+      RowBox[{"\[PartialD]", "z"}]], 
+     SubscriptBox["E", "x"]}], "-", 
+    RowBox[{
+     FractionBox["\[PartialD]", 
+      RowBox[{"\[PartialD]", "x"}]], 
+     SubscriptBox["E", "z"]}]}], "=", 
+   RowBox[{
+    RowBox[{"-", "i"}], " ", "\[Omega]", " ", 
+    SubscriptBox["\[Mu]", "0"], 
+    SubscriptBox["H", "y"]}]}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"-", 
+    RowBox[{
+     FractionBox["\[PartialD]", 
+      RowBox[{"\[PartialD]", "z"}]], 
+     SubscriptBox["H", "y"]}]}], "=", 
+   RowBox[{"i", " ", "\[Omega]", " ", 
+    SubscriptBox["\[CurlyEpsilon]", "0"], "\[CurlyEpsilon]", " ", 
+    SubscriptBox["E", "x"]}]}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FractionBox["\[PartialD]", 
+     RowBox[{"\[PartialD]", "x"}]], 
+    SubscriptBox["H", "y"]}], "=", 
+   RowBox[{"i", " ", "\[Omega]", " ", 
+    SubscriptBox["\[CurlyEpsilon]", "0"], "\[CurlyEpsilon]", " ", 
+    SubscriptBox["E", "z"]}]}], TraditionalForm]}], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687556042779346*^9, 3.687556091490351*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Fresnel approximation", "Subsubsubsection",
+ CellChangeTimes->{3.6875622902121673`*^9}],
+
+Cell[BoxData[
+ FormBox["", TraditionalForm]], "DisplayFormulaNumbered"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Finite-Differential BPM (FD-BPM)", "Subsubsection",
+ CellChangeTimes->{{3.6875561046594005`*^9, 3.687556124026141*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Wave equation (TE-mode)", "Subsubsubsection",
+ CellChangeTimes->{{3.6875563869445114`*^9, 3.6875563885845785`*^9}, {
+  3.6875586625570927`*^9, 3.6875586726370673`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      SuperscriptBox["\[PartialD]", "2"], 
+      RowBox[{"\[PartialD]", 
+       SuperscriptBox["z", "2"]}]], 
+     SubscriptBox["E", "y"]}], "+", 
+    RowBox[{
+     FractionBox[
+      SuperscriptBox["\[PartialD]", "2"], 
+      RowBox[{"\[PartialD]", 
+       SuperscriptBox["x", "2"]}]], 
+     SubscriptBox["E", "y"]}], "+", 
+    RowBox[{
+     SubsuperscriptBox["k", "0", "2"], "\[CurlyEpsilon]", " ", 
+     SubscriptBox["E", "y"]}]}], "=", "0"}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687556143321868*^9, 3.687556145588895*^9}, {
+  3.6875564014174595`*^9, 3.6875564520240517`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SubscriptBox["E", "y"], "(", 
+    RowBox[{"x", ",", "y", ",", "z"}], ")"}], "=", 
+   RowBox[{
+    RowBox[{"\[Phi]", "(", 
+     RowBox[{"x", ",", "y", ",", "z"}], ")"}], 
+    SuperscriptBox["e", 
+     RowBox[{
+      RowBox[{"-", "i"}], " ", "\[Beta]", " ", "z"}]]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875564594159384`*^9, 3.687556476911825*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"\[Beta]", "=", 
+   RowBox[{
+    SubscriptBox["n", "eff"], 
+    SubscriptBox["k", "0"]}]}], TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687556483935959*^9, 3.6875564898076987`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     SuperscriptBox["\[PartialD]", "2"], 
+     RowBox[{"\[PartialD]", 
+      SuperscriptBox["z", "2"]}]], 
+    SubscriptBox["E", "y"]}], "=", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["\[PartialD]", "2"], "\[Phi]"}], 
+      RowBox[{"\[PartialD]", 
+       SuperscriptBox["z", "2"]}]], 
+     SuperscriptBox["e", 
+      RowBox[{
+       RowBox[{"-", "i"}], " ", "\[Beta]", " ", "z"}]]}], "-", 
+    RowBox[{"2", "i", " ", "\[Beta]", 
+     FractionBox[
+      RowBox[{"\[PartialD]", "\[Phi]"}], 
+      RowBox[{"\[PartialD]", "z"}]], 
+     SuperscriptBox["e", 
+      RowBox[{
+       RowBox[{"-", "i"}], " ", "\[Beta]", " ", "z"}]]}], "-", 
+    RowBox[{
+     SuperscriptBox["\[Beta]", "2"], "\[Phi]", " ", 
+     SuperscriptBox["e", 
+      RowBox[{
+       RowBox[{"-", "i"}], " ", "\[Beta]", " ", "z"}]]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875564933124466`*^9, 3.6875565462560296`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["\[PartialD]", "2"], "\[Phi]"}], 
+     RowBox[{"\[PartialD]", 
+      SuperscriptBox["z", "2"]}]], "-", 
+    RowBox[{"2", "i", " ", "\[Beta]", " ", 
+     FractionBox[
+      RowBox[{"\[PartialD]", "\[Phi]"}], 
+      RowBox[{"\[PartialD]", "z"}]]}], "+", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["\[PartialD]", "2"], "\[Phi]"}], 
+     RowBox[{"\[PartialD]", 
+      SuperscriptBox["x", "2"]}]], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SubsuperscriptBox["k", "0", "2"], 
+        SuperscriptBox["n", "2"]}], "-", 
+       SuperscriptBox["\[Beta]", "2"]}], ")"}], "\[Phi]"}]}], "=", "0"}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875565861751013`*^9, 3.6875566513594007`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["\[PartialD]", "2"], "\[Phi]"}], 
+    RowBox[{"\[PartialD]", 
+     SuperscriptBox["z", "2"]}]], 
+   RowBox[{"\[TildeTilde]", "0"}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687556671175107*^9, 3.6875566849282*^9}}],
+
+Cell["Fresnel wave equation (Schrodinger Equation):", "TextIndent",
+ CellChangeTimes->{{3.6875567035595245`*^9, 3.6875567228796973`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"2", "i", " ", "\[Beta]", " ", 
+    FractionBox[
+     RowBox[{"\[PartialD]", "\[Phi]"}], 
+     RowBox[{"\[PartialD]", "z"}]]}], "=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["\[PartialD]", "2"], "\[Phi]"}], 
+     RowBox[{"\[PartialD]", 
+      SuperscriptBox["x", "2"]}]], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SubsuperscriptBox["k", "0", "2"], 
+        SuperscriptBox["n", "2"]}], "-", 
+       SuperscriptBox["\[Beta]", "2"]}], ")"}], "\[Phi]"}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875566911523046`*^9, 3.6875566996547003`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"2", "i", " ", "\[Beta]", " ", 
+    FractionBox[
+     RowBox[{"\[PartialD]", "\[Phi]"}], 
+     RowBox[{"\[PartialD]", "z"}]]}], "=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["\[PartialD]", "2"], "\[Phi]"}], 
+     RowBox[{"\[PartialD]", 
+      SuperscriptBox["x", "2"]}]], "+", 
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["k", "0", "2"], "(", 
+      RowBox[{"\[CurlyEpsilon]", "-", 
+       SubsuperscriptBox["n", "eff", "2"]}], ")"}], "\[Phi]"}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875568628880644`*^9, 3.6875568817019715`*^9}}],
+
+Cell["Discretization of the x and z coordinates:", "TextIndent",
+ CellChangeTimes->{{3.6875569007659087`*^9, 3.6875569127573323`*^9}}],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{"x", "=", 
+   RowBox[{"p", " ", 
+    SubscriptBox["\[CapitalDelta]", "x"]}]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{"z", "=", 
+   RowBox[{"l", " ", 
+    SubscriptBox["\[CapitalDelta]", "z"]}]}], 
+  TraditionalForm]}], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875569145982046`*^9, 3.687556932581596*^9}}],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Phi]", "(", 
+    RowBox[{"x", ",", "z"}], ")"}], "\[Rule]", " ", 
+   SubsuperscriptBox["\[Phi]", "p", "l"]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"\[CurlyEpsilon]", "(", 
+    RowBox[{"x", ",", "z"}], ")"}], "\[Rule]", " ", 
+   RowBox[{
+    SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "p", ")"}]}], 
+  TraditionalForm]}], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687556946757581*^9, 3.687556979429366*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     SuperscriptBox["\[PartialD]", "2"], 
+     RowBox[{"\[PartialD]", 
+      SuperscriptBox["x", "2"]}]], "\[Phi]"}], "=", 
+   RowBox[{
+    RowBox[{
+     FractionBox["1", 
+      SubscriptBox["\[CapitalDelta]", "x"]], 
+     RowBox[{"(", 
+      RowBox[{
+       FractionBox[
+        RowBox[{
+         SubscriptBox["\[Phi]", 
+          RowBox[{"p", "+", "1"}]], "-", 
+         SubscriptBox["\[Phi]", "p"]}], 
+        SubscriptBox["\[CapitalDelta]", "x"]], "-", 
+       FractionBox[
+        RowBox[{
+         SubscriptBox["\[Phi]", "p"], "-", 
+         SubscriptBox["\[Phi]", 
+          RowBox[{"p", "-", "1"}]]}], 
+        SubscriptBox["\[CapitalDelta]", "x"]]}], ")"}]}], "=", 
+    FractionBox[
+     RowBox[{
+      SubscriptBox["\[Phi]", 
+       RowBox[{"p", "+", "1"}]], "-", 
+      RowBox[{"2", 
+       SubscriptBox["\[Phi]", "p"]}], "+", 
+      SubscriptBox["\[Phi]", 
+       RowBox[{"p", "-", "1"}]]}], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       SubscriptBox["\[CapitalDelta]", "x"], ")"}], "2"]]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875570326052723`*^9, 3.6875571090061665`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["k", "0", "2"], "(", 
+     RowBox[{"\[CurlyEpsilon]", "-", 
+      SubsuperscriptBox["n", "eff", "2"]}], ")"}], "\[Phi]"}], "=", 
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["k", "0", "2"], "(", 
+     RowBox[{
+      RowBox[{"\[CurlyEpsilon]", "(", "p", ")"}], "-", 
+      SubsuperscriptBox["n", "eff", "2"]}], ")"}], 
+    SubscriptBox["\[Phi]", "p"]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687557124117371*^9, 3.6875571430457344`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"2", "i", " ", "\[Beta]", " ", 
+    RowBox[{
+     FractionBox["\[PartialD]", 
+      RowBox[{"\[PartialD]", "z"}]], 
+     SubscriptBox["\[Phi]", "p"]}]}], "=", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Alpha]", "w"], 
+     SubscriptBox["\[Phi]", 
+      RowBox[{"p", "-", "1"}]]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["\[Alpha]", "x"], "+", 
+       RowBox[{
+        SubsuperscriptBox["k", "0", "2"], "(", 
+        RowBox[{
+         RowBox[{"\[CurlyEpsilon]", "(", "p", ")"}], "-", 
+         SubsuperscriptBox["n", "eff", "2"]}], ")"}]}], ")"}], 
+     SubscriptBox["\[Phi]", "p"]}], "+", 
+    RowBox[{
+     SubscriptBox["\[Alpha]", "e"], 
+     SubscriptBox["\[Phi]", 
+      RowBox[{"p", "+", "1"}]]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875571601403656`*^9, 3.687557217556535*^9}}],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[Alpha]", "w"], "=", 
+   FractionBox["1", 
+    SubsuperscriptBox["\[CapitalDelta]", "x", "2"]]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[Alpha]", "e"], "=", 
+   FractionBox["1", 
+    SubsuperscriptBox["\[CapitalDelta]", "x", "2"]]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[Alpha]", "x"], "=", 
+   RowBox[{"-", 
+    FractionBox["2", 
+     SubsuperscriptBox["\[CapitalDelta]", "x", "2"]]}]}], 
+  TraditionalForm]}], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687557221740128*^9, 3.6875572586839724`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"2", "i", " ", "\[Beta]", " ", 
+    FractionBox[
+     RowBox[{
+      SubsuperscriptBox["\[Phi]", "p", 
+       RowBox[{"l", "+", "1"}]], "-", 
+      SubsuperscriptBox["\[Phi]", "p", "l"]}], 
+     SubscriptBox["\[CapitalDelta]", "z"]]}], "=", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Alpha]", "w"], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "-", "1"}], 
+      RowBox[{"l", "+", 
+       FractionBox["1", "2"]}]]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["\[Alpha]", "x"], "+", 
+       RowBox[{
+        SubsuperscriptBox["k", "0", "2"], "(", 
+        RowBox[{
+         RowBox[{"\[CurlyEpsilon]", "(", "p", ")"}], "-", 
+         SubsuperscriptBox["n", "eff", "2"]}], ")"}]}], ")"}], 
+     SubsuperscriptBox["\[Phi]", "p", 
+      RowBox[{"l", "+", 
+       FractionBox["1", "2"]}]]}], "+", 
+    RowBox[{
+     SubscriptBox["\[Alpha]", "e"], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "+", "1"}], 
+      RowBox[{"l", "+", 
+       FractionBox["1", "2"]}]]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875573257564526`*^9, 3.687557378139899*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubsuperscriptBox["\[Phi]", "p", 
+    RowBox[{"l", "+", 
+     FractionBox["1", "2"]}]], "\[TildeTilde]", 
+   FractionBox[
+    RowBox[{
+     SubsuperscriptBox["\[Phi]", "p", 
+      RowBox[{"l", "+", "1"}]], "+", 
+     SubsuperscriptBox["\[Phi]", "p", "l"]}], "2"]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687557409115243*^9, 3.687557435652641*^9}, {
+  3.6875574837564564`*^9, 3.687557486483612*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"2", "i", " ", "\[Beta]", " ", 
+    FractionBox[
+     RowBox[{
+      SubsuperscriptBox["\[Phi]", "p", 
+       RowBox[{"l", "+", "1"}]], "-", 
+      SubsuperscriptBox["\[Phi]", "p", "l"]}], 
+     SubscriptBox["\[CapitalDelta]", "z"]]}], "=", 
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "2"], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SubsuperscriptBox["\[Alpha]", "w", "l"], 
+        SubsuperscriptBox["\[Phi]", 
+         RowBox[{"p", "-", "1"}], "l"]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SubsuperscriptBox["\[Alpha]", "x", "l"], "+", 
+          RowBox[{
+           SubsuperscriptBox["k", "0", "2"], "(", 
+           RowBox[{
+            RowBox[{
+             SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "p", ")"}], "-", 
+            SubsuperscriptBox["n", "eff", "2"]}], ")"}]}], ")"}], 
+        SubsuperscriptBox["\[Phi]", "p", "l"]}], "+", 
+       RowBox[{
+        SubsuperscriptBox["\[Alpha]", "e", "l"], 
+        SubsuperscriptBox["\[Phi]", 
+         RowBox[{"p", "+", "1"}], "l"]}]}], ")"}]}], "+", 
+    RowBox[{
+     FractionBox["1", "2"], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SubsuperscriptBox["\[Alpha]", "w", 
+         RowBox[{"l", "+", "1"}]], 
+        SubsuperscriptBox["\[Phi]", 
+         RowBox[{"p", "-", "1"}], 
+         RowBox[{"l", "+", "1"}]]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SubsuperscriptBox["\[Alpha]", "x", 
+           RowBox[{"l", "+", "1"}]], "+", 
+          RowBox[{
+           SubsuperscriptBox["k", "0", "2"], "(", 
+           RowBox[{
+            RowBox[{
+             SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "p", ")"}], "-", 
+            SubsuperscriptBox["n", "eff", "2"]}], ")"}]}], ")"}], 
+        SubsuperscriptBox["\[Phi]", "p", 
+         RowBox[{"l", "+", "1"}]]}], "+", 
+       RowBox[{
+        SubsuperscriptBox["\[Alpha]", "e", 
+         RowBox[{"l", "+", "1"}]], 
+        SubsuperscriptBox["\[Phi]", 
+         RowBox[{"p", "+", "1"}], 
+         RowBox[{"l", "+", "1"}]]}]}], ")"}]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{
+  3.687557454868802*^9, {3.687557492779477*^9, 3.6875575802745357`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       SubsuperscriptBox["\[Alpha]", "w", 
+        RowBox[{"l", "+", "1"}]], "2"]}], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "-", "1"}], 
+      RowBox[{"l", "+", "1"}]]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox[
+         SubsuperscriptBox["\[Alpha]", "x", 
+          RowBox[{"l", "+", "1"}]], "2"]}], "+", 
+       FractionBox[
+        RowBox[{"2", "i", " ", "\[Beta]"}], 
+        SubscriptBox["\[CapitalDelta]", "z"]], "-", 
+       RowBox[{
+        FractionBox[
+         SubsuperscriptBox["k", "0", "2"], "2"], 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "p", ")"}], "-", 
+          SubsuperscriptBox["n", "eff", "2"]}], ")"}]}]}], ")"}], 
+     SubsuperscriptBox["\[Phi]", "p", 
+      RowBox[{"l", "+", "1"}]]}], "-", 
+    RowBox[{
+     FractionBox[
+      SubsuperscriptBox["\[Alpha]", "e", 
+       RowBox[{"l", "+", "1"}]], "2"], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "+", "1"}], 
+      RowBox[{"l", "+", "1"}]]}]}], "=", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      SubsuperscriptBox["\[Alpha]", "w", "l"], "2"], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "-", "1"}], "l"]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       FractionBox[
+        SubsuperscriptBox["\[Alpha]", "x", "l"], "2"], "+", 
+       FractionBox[
+        RowBox[{"2", "i", " ", "\[Beta]"}], 
+        SubscriptBox["\[CapitalDelta]", "z"]], "+", 
+       RowBox[{
+        FractionBox[
+         SubsuperscriptBox["k", "0", "2"], "2"], 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "p", ")"}], "-", 
+          SubsuperscriptBox["n", "eff", "2"]}], ")"}]}]}], ")"}], 
+     SubsuperscriptBox["\[Phi]", "p", "l"]}], "+", 
+    RowBox[{
+     FractionBox[
+      SubsuperscriptBox["\[Alpha]", "e", "l"], "2"], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "+", "1"}], "l"]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687557617115857*^9, 3.687557775873498*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      SubsuperscriptBox["\[Alpha]", "w", 
+       RowBox[{"l", "+", "1"}]]}], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "-", "1"}], 
+      RowBox[{"l", "+", "1"}]]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SubsuperscriptBox["\[Alpha]", "x", 
+         RowBox[{"l", "+", "1"}]]}], "+", 
+       FractionBox[
+        RowBox[{"4", "i", " ", "\[Beta]"}], 
+        SubscriptBox["\[CapitalDelta]", "z"]], "-", 
+       RowBox[{
+        SubsuperscriptBox["k", "0", "2"], "(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "p", ")"}], "-", 
+         SubsuperscriptBox["n", "eff", "2"]}], ")"}]}], ")"}], 
+     SubsuperscriptBox["\[Phi]", "p", 
+      RowBox[{"l", "+", "1"}]]}], "-", 
+    RowBox[{
+     SubsuperscriptBox["\[Alpha]", "e", 
+      RowBox[{"l", "+", "1"}]], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "+", "1"}], 
+      RowBox[{"l", "+", "1"}]]}]}], "=", 
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Alpha]", "w", "l"], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "-", "1"}], "l"]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SubsuperscriptBox["\[Alpha]", "x", "l"], "+", 
+       FractionBox[
+        RowBox[{"4", "i", " ", "\[Beta]"}], 
+        SubscriptBox["\[CapitalDelta]", "z"]], "+", 
+       RowBox[{
+        SubsuperscriptBox["k", "0", "2"], "(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "p", ")"}], "-", 
+         SubsuperscriptBox["n", "eff", "2"]}], ")"}]}], ")"}], 
+     SubsuperscriptBox["\[Phi]", "p", "l"]}], "+", 
+    RowBox[{
+     SubsuperscriptBox["\[Alpha]", "e", "l"], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "+", "1"}], "l"]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687557794892593*^9, 3.6875578096014595`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Nonequidistant discretization scheme", "Subsubsubsection",
+ CellChangeTimes->{{3.687558427062785*^9, 3.68755842851857*^9}, {
+  3.687558516485388*^9, 3.687558534812913*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      SubsuperscriptBox["\[Alpha]", "w", 
+       RowBox[{"l", "+", "1"}]]}], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "-", "1"}], 
+      RowBox[{"l", "+", "1"}]]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SubsuperscriptBox["\[Alpha]", "x", 
+         RowBox[{"l", "+", "1"}]]}], "+", 
+       FractionBox[
+        RowBox[{"4", "i", " ", "\[Beta]"}], 
+        SubscriptBox["\[CapitalDelta]", "z"]], "-", 
+       RowBox[{
+        SubsuperscriptBox["k", "0", "2"], "(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "p", ")"}], "-", 
+         SubsuperscriptBox["n", "eff", "2"]}], ")"}]}], ")"}], 
+     SubsuperscriptBox["\[Phi]", "p", 
+      RowBox[{"l", "+", "1"}]]}], "-", 
+    RowBox[{
+     SubsuperscriptBox["\[Alpha]", "e", 
+      RowBox[{"l", "+", "1"}]], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "+", "1"}], 
+      RowBox[{"l", "+", "1"}]]}]}], "=", 
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Alpha]", "w", "l"], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "-", "1"}], "l"]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SubsuperscriptBox["\[Alpha]", "x", "l"], "+", 
+       FractionBox[
+        RowBox[{"4", "i", " ", "\[Beta]"}], 
+        SubscriptBox["\[CapitalDelta]", "z"]], "+", 
+       RowBox[{
+        SubsuperscriptBox["k", "0", "2"], "(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "p", ")"}], "-", 
+         SubsuperscriptBox["n", "eff", "2"]}], ")"}]}], ")"}], 
+     SubsuperscriptBox["\[Phi]", "p", "l"]}], "+", 
+    RowBox[{
+     SubsuperscriptBox["\[Alpha]", "e", "l"], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "+", "1"}], "l"]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{3.6875585499842405`*^9}],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[Alpha]", "w"], "=", 
+   FractionBox["2", 
+    RowBox[{"w", "(", 
+     RowBox[{"e", "+", "w"}], ")"}]]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[Alpha]", "e"], "=", 
+   FractionBox["2", 
+    RowBox[{"e", "(", 
+     RowBox[{"e", "+", "w"}], ")"}]]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[Alpha]", "x"], "=", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox["2", 
+      RowBox[{"e", " ", "w"}]]}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["4", 
+        RowBox[{"e", " ", "w"}]]}], "+", 
+      SubscriptBox["\[Alpha]", "e"], "+", 
+      SubscriptBox["\[Alpha]", "w"]}], "=", 
+     RowBox[{
+      RowBox[{"-", 
+       SubscriptBox["\[Alpha]", "e"]}], "-", 
+      SubscriptBox["\[Alpha]", "w"]}]}]}]}], 
+  TraditionalForm]}], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875585728692527`*^9, 3.6875586508529415`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Stability condition", "Subsubsubsection",
+ CellChangeTimes->{{3.6875597789708357`*^9, 3.6875597846714125`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"2", "i", " ", "\[Beta]", " ", 
+    FractionBox[
+     RowBox[{"\[PartialD]", "\[Phi]"}], 
+     RowBox[{"\[PartialD]", "z"}]]}], "=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["\[PartialD]", "2"], "\[Phi]"}], 
+     RowBox[{"\[PartialD]", 
+      SuperscriptBox["x", "2"]}]], "+", 
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["k", "0", "2"], "(", 
+      RowBox[{"\[CurlyEpsilon]", "-", 
+       SubsuperscriptBox["n", "eff", "2"]}], ")"}], "\[Phi]"}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687559789471259*^9, 3.687559813943064*^9}}],
+
+Cell[TextData[{
+ "For simplicity, set ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[CurlyEpsilon]", "=", 
+    SubsuperscriptBox["n", "eff", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", so we have"
+}], "TextIndent",
+ CellChangeTimes->{{3.687559835758264*^9, 3.6875598680384545`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"2", "i", " ", "\[Beta]", " ", 
+    FractionBox[
+     RowBox[{"\[PartialD]", "\[Phi]"}], 
+     RowBox[{"\[PartialD]", "z"}]]}], "=", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["\[PartialD]", "2"], "\[Phi]"}], 
+    RowBox[{"\[PartialD]", 
+     SuperscriptBox["x", "2"]}]]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875598712867465`*^9, 3.6875598924882183`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"2", "i", " ", "\[Beta]", " ", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"\[Phi]", "(", 
+       RowBox[{"x", ",", 
+        RowBox[{"z", "+", 
+         SubscriptBox["\[CapitalDelta]", "z"]}]}], ")"}], "-", 
+      RowBox[{"\[Phi]", "(", 
+       RowBox[{"x", ",", "z"}], ")"}]}], 
+     SubscriptBox["\[CapitalDelta]", "z"]]}], "=", 
+   RowBox[{
+    RowBox[{"\[Alpha]", " ", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["\[PartialD]", "2"], 
+       RowBox[{"\[Phi]", "(", 
+        RowBox[{"x", ",", 
+         RowBox[{"z", "+", 
+          SubscriptBox["\[CapitalDelta]", "z"]}]}], ")"}]}], 
+      RowBox[{"\[PartialD]", 
+       SuperscriptBox["x", "2"]}]]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "-", "\[Alpha]"}], ")"}], 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["\[PartialD]", "2"], 
+       RowBox[{"\[Phi]", "(", 
+        RowBox[{"x", ",", "z"}], ")"}]}], 
+      RowBox[{"\[PartialD]", 
+       SuperscriptBox["x", "2"]}]]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687559918912263*^9, 3.6875599759118943`*^9}}],
+
+Cell[TextData[{
+ "When ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Alpha]", "=", 
+    FractionBox["1", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", it is called Crank-Nicolcon scheme. Plane wave solution:"
+}], "TextIndent",
+ CellChangeTimes->{{3.6875599804782248`*^9, 3.68756000176608*^9}, {
+  3.687560058445485*^9, 3.687560066557124*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Phi]", "(", 
+    RowBox[{"x", ",", "z"}], ")"}], "=", 
+   RowBox[{
+    SubscriptBox["\[Phi]", "0"], 
+    SuperscriptBox["e", 
+     RowBox[{"i", " ", 
+      SubscriptBox["k", "x"], "x"}]], 
+    SuperscriptBox["e", 
+     RowBox[{
+      RowBox[{"-", "i"}], " ", "\[Beta]", " ", "z"}]]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687560039775408*^9, 3.6875600791500053`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     SuperscriptBox["\[PartialD]", "2"], 
+     RowBox[{"\[PartialD]", 
+      SuperscriptBox["x", "2"]}]], 
+    RowBox[{"\[Phi]", "(", 
+     RowBox[{"x", ",", "z"}], ")"}]}], "=", 
+   RowBox[{
+    RowBox[{"-", 
+     SubsuperscriptBox["k", "x", "2"]}], 
+    RowBox[{"\[Phi]", "(", 
+     RowBox[{"x", ",", "z"}], ")"}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687560081557353*^9, 3.6875600953655934`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"2", "i", " ", "\[Beta]"}], 
+     SubscriptBox["\[CapitalDelta]", "z"]], 
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox["e", 
+       RowBox[{
+        RowBox[{"-", "i"}], " ", "\[Beta]", " ", 
+        SubscriptBox["\[CapitalDelta]", "z"]}]], "-", "1"}], ")"}]}], "=", 
+   RowBox[{"-", 
+    RowBox[{
+     SubsuperscriptBox["k", "x", "2"], "(", 
+     RowBox[{
+      RowBox[{"\[Alpha]", " ", 
+       SuperscriptBox["e", 
+        RowBox[{
+         RowBox[{"-", "i"}], " ", "\[Beta]", " ", 
+         SubscriptBox["\[CapitalDelta]", "z"]}]]}], "+", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", "\[Alpha]"}], ")"}]}], ")"}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687560102461866*^9, 3.6875601403973475`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"2", "i", " ", "\[Beta]"}], 
+       SubscriptBox["\[CapitalDelta]", "z"]], "+", 
+      RowBox[{
+       SubsuperscriptBox["k", "x", "2"], "\[Alpha]"}]}], ")"}], 
+    SuperscriptBox["e", 
+     RowBox[{
+      RowBox[{"-", "i"}], " ", "\[Beta]", " ", 
+      SubscriptBox["\[CapitalDelta]", "z"]}]]}], "=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"2", "i", " ", "\[Beta]"}], 
+     SubscriptBox["\[CapitalDelta]", "z"]], "-", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "-", "\[Alpha]"}], ")"}], 
+     SubsuperscriptBox["k", "x", "2"]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875601484927692`*^9, 3.6875601827169027`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["e", 
+    RowBox[{
+     RowBox[{"-", "i"}], " ", "\[Beta]", " ", 
+     SubscriptBox["\[CapitalDelta]", "z"]}]], "=", 
+   FractionBox[
+    RowBox[{
+     FractionBox[
+      RowBox[{"2", "i", " ", "\[Beta]"}], 
+      SubscriptBox["\[CapitalDelta]", "z"]], "-", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", "-", "\[Alpha]"}], ")"}], 
+      SubsuperscriptBox["k", "x", "2"]}]}], 
+    RowBox[{
+     FractionBox[
+      RowBox[{"2", "i", " ", "\[Beta]"}], 
+      SubscriptBox["\[CapitalDelta]", "z"]], "+", 
+     RowBox[{
+      SubsuperscriptBox["k", "x", "2"], "\[Alpha]"}]}]]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875601938218336`*^9, 3.6875602059105797`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"\[Lambda]", "=", 
+   RowBox[{
+    RowBox[{"|", 
+     SuperscriptBox["e", 
+      RowBox[{
+       RowBox[{"-", "i"}], " ", "\[Beta]", " ", 
+       SubscriptBox["\[CapitalDelta]", "z"]}]], "|"}], "=", 
+    RowBox[{
+     SqrtBox[
+      FractionBox[
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          FractionBox[
+           RowBox[{"2", " ", "\[Beta]"}], 
+           SubscriptBox["\[CapitalDelta]", "z"]], ")"}], "2"], "+", 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"1", "-", "\[Alpha]"}], ")"}], "2"], 
+         SubsuperscriptBox["k", "x", "4"]}]}], 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          FractionBox[
+           RowBox[{"2", " ", "\[Beta]"}], 
+           SubscriptBox["\[CapitalDelta]", "z"]], ")"}], "2"], "+", 
+        RowBox[{
+         SuperscriptBox["\[Alpha]", "2"], 
+         SubsuperscriptBox["k", "x", "4"]}]}]]], "=", 
+     SqrtBox[
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["C", "2"], "+", 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"1", "-", "\[Alpha]"}], ")"}], "2"], 
+         SubsuperscriptBox["k", "x", "4"]}]}], 
+       RowBox[{
+        SuperscriptBox["C", "2"], "+", 
+        RowBox[{
+         SuperscriptBox["\[Alpha]", "2"], 
+         SubsuperscriptBox["k", "x", "4"]}]}]]]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875602560523825`*^9, 3.687560341494005*^9}}],
+
+Cell[TextData[{
+ "Where ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"C", "=", 
+    FractionBox[
+     RowBox[{"2", "\[Beta]"}], 
+     SubscriptBox["\[CapitalDelta]", "z"]]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". When ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Alpha]", "=", 
+    FractionBox["1", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ",  \[Lambda]=1, calculation is stable"
+}], "TextIndent",
+ CellChangeTimes->{{3.687560345309465*^9, 3.6875604352118473`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Transparent Boundary Condition", "Subsubsubsection",
+ CellChangeTimes->{{3.6875604237796*^9, 3.687560432948477*^9}}],
+
+Cell[TextData[{
+ "An infinitely wide area would have no analysis boundary and there would \
+thus be no reflections at boundaries. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"p", "=", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"p", "=", 
+    RowBox[{"M", "+", "1"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " are assumed to be outside the analysis window."
+}], "TextIndent",
+ CellChangeTimes->{{3.687560461004242*^9, 3.6875604992193756`*^9}, {
+  3.687560575818225*^9, 3.6875606041942997`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Phi]", "(", 
+    RowBox[{"x", ",", "z"}], ")"}], "=", 
+   RowBox[{
+    RowBox[{"A", "(", "z", ")"}], 
+    SuperscriptBox["e", 
+     RowBox[{"i", " ", 
+      SubscriptBox["k", "x"], "x"}]]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687560607938367*^9, 3.687560617106943*^9}}],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[Phi]", "0"], "=", 
+   RowBox[{
+    RowBox[{"A", "(", "z", ")"}], 
+    SuperscriptBox["e", 
+     RowBox[{"i", " ", 
+      SubscriptBox["k", "x"], 
+      SubscriptBox["x", "0"]}]]}]}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[Phi]", "1"], "=", 
+   RowBox[{
+    RowBox[{"A", "(", "z", ")"}], 
+    SuperscriptBox["e", 
+     RowBox[{"i", " ", 
+      SubscriptBox["k", "x"], 
+      SubscriptBox["x", "1"]}]]}]}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[Phi]", "2"], "=", 
+   RowBox[{
+    RowBox[{"A", "(", "z", ")"}], 
+    SuperscriptBox["e", 
+     RowBox[{"i", " ", 
+      SubscriptBox["k", "x"], 
+      SubscriptBox["x", "2"]}]]}]}], 
+  TraditionalForm]}], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875607079067774`*^9, 3.6875607454501143`*^9}}],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[CapitalDelta]", "x"], "=", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["x", "2"], "-", 
+      SubscriptBox["x", "1"]}], "=", 
+     RowBox[{
+      SubscriptBox["x", "1"], "-", 
+      SubscriptBox["x", "0"]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ","
+}], "TextNoIndent",
+ CellChangeTimes->{{3.6875607977664227`*^9, 3.6875608198579435`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["e", 
+     RowBox[{"i", " ", 
+      SubscriptBox["k", "x"], " ", 
+      SubscriptBox["\[CapitalDelta]", "x"]}]], "=", 
+    FractionBox[
+     SubscriptBox["\[Phi]", "2"], 
+     SubscriptBox["\[Phi]", "1"]]}], ",", "   ", 
+   RowBox[{
+    SuperscriptBox["e", 
+     RowBox[{"i", " ", 
+      SubscriptBox["k", "x"], 
+      SubscriptBox["\[CapitalDelta]", "x"]}]], "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox[
+       SubscriptBox["\[Phi]", "1"], 
+       SubscriptBox["\[Phi]", "0"]], "\[Rule]", " ", 
+      FractionBox[
+       SubscriptBox["\[Phi]", "2"], 
+       SubscriptBox["\[Phi]", "1"]]}], "=", 
+     FractionBox[
+      SubscriptBox["\[Phi]", "1"], 
+      SubscriptBox["\[Phi]", "0"]]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875608470496635`*^9, 3.6875608776990547`*^9}, {
+  3.687561070888442*^9, 3.6875610939133196`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[Eta]", "1"], "=", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      SubscriptBox["\[Phi]", "2"], 
+      SubscriptBox["\[Phi]", "1"]], "\[Rule]", " ", 
+     SubscriptBox["\[Phi]", "0"]}], "=", 
+    FractionBox[
+     SubscriptBox["\[Phi]", "1"], 
+     SubscriptBox["\[Eta]", "1"]]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875610460320873`*^9, 3.687561104089245*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["k", "x"], "=", 
+   FractionBox[
+    RowBox[{"ln", "(", 
+     SubscriptBox["\[Eta]", "1"], ")"}], 
+    RowBox[{"i", " ", 
+     SubscriptBox["\[CapitalDelta]", "x"]}]]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875611133440447`*^9, 3.687561132577203*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[Phi]", "0"], "=", 
+   RowBox[{
+    SubscriptBox["\[Phi]", "1"], 
+    SuperscriptBox["e", 
+     RowBox[{
+      RowBox[{"-", "i"}], " ", 
+      SubscriptBox["k", "x"], 
+      SubscriptBox["\[CapitalDelta]", "x"]}]]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875611368080544`*^9, 3.6875611497837305`*^9}}],
+
+Cell["Similarily,", "TextNoIndent",
+ CellChangeTimes->{{3.687561167767638*^9, 3.687561174871873*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Eta]", "M"], "=", 
+    FractionBox[
+     SubscriptBox["\[Phi]", "M"], 
+     SubscriptBox["\[Phi]", 
+      RowBox[{"M", "-", "1"}]]]}], ",", "  ", 
+   RowBox[{
+    SubscriptBox["\[Phi]", 
+     RowBox[{"M", "+", "1"}]], "=", 
+    RowBox[{
+     SubscriptBox["\[Phi]", "M"], 
+     SubscriptBox["\[Eta]", "M"]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875611786160555`*^9, 3.6875612061279263`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["k", "x"], "=", 
+   FractionBox[
+    RowBox[{"ln", "(", 
+     SubscriptBox["\[Eta]", "M"], ")"}], 
+    RowBox[{"i", " ", 
+     SubscriptBox["\[CapitalDelta]", "x"]}]]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687561209135552*^9, 3.687561221792865*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[Phi]", 
+    RowBox[{"M", "+", "1"}]], "=", 
+   RowBox[{
+    SubscriptBox["\[Phi]", "M"], 
+    SuperscriptBox["e", 
+     RowBox[{
+      RowBox[{"-", "i"}], " ", 
+      SubscriptBox["k", "x"], 
+      SubscriptBox["\[CapitalDelta]", "x"]}]]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687561230383255*^9, 3.687561243287677*^9}}],
+
+Cell["Actual programming", "TextNoIndent",
+ CellChangeTimes->{{3.6875613680871773`*^9, 3.6875613749984407`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      SubsuperscriptBox["\[Alpha]", "w", 
+       RowBox[{"l", "+", "1"}]]}], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "-", "1"}], 
+      RowBox[{"l", "+", "1"}]]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SubsuperscriptBox["\[Alpha]", "x", 
+         RowBox[{"l", "+", "1"}]]}], "+", 
+       FractionBox[
+        RowBox[{"4", "i", " ", "\[Beta]"}], 
+        SubscriptBox["\[CapitalDelta]", "z"]], "-", 
+       RowBox[{
+        SubsuperscriptBox["k", "0", "2"], "(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "p", ")"}], "-", 
+         SubsuperscriptBox["n", "eff", "2"]}], ")"}]}], ")"}], 
+     SubsuperscriptBox["\[Phi]", "p", 
+      RowBox[{"l", "+", "1"}]]}], "-", 
+    RowBox[{
+     SubsuperscriptBox["\[Alpha]", "e", 
+      RowBox[{"l", "+", "1"}]], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "+", "1"}], 
+      RowBox[{"l", "+", "1"}]]}]}], "=", 
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Alpha]", "w", "l"], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "-", "1"}], "l"]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SubsuperscriptBox["\[Alpha]", "x", "l"], "+", 
+       FractionBox[
+        RowBox[{"4", "i", " ", "\[Beta]"}], 
+        SubscriptBox["\[CapitalDelta]", "z"]], "+", 
+       RowBox[{
+        SubsuperscriptBox["k", "0", "2"], "(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "p", ")"}], "-", 
+         SubsuperscriptBox["n", "eff", "2"]}], ")"}]}], ")"}], 
+     SubsuperscriptBox["\[Phi]", "p", "l"]}], "+", 
+    RowBox[{
+     SubsuperscriptBox["\[Alpha]", "e", "l"], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "+", "1"}], "l"]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{3.6875613773523026`*^9}],
+
+Cell["Set:", "TextIndent",
+ CellChangeTimes->{{3.687561404086007*^9, 3.68756140554245*^9}}],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"A", "(", "p", ")"}], "=", 
+   RowBox[{"-", 
+    SubsuperscriptBox["\[Alpha]", "w", 
+     RowBox[{"l", "+", "1"}]]}]}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"B", "(", "p", ")"}], "=", 
+   RowBox[{
+    RowBox[{"-", 
+     SubsuperscriptBox["\[Alpha]", "x", 
+      RowBox[{"l", "+", "1"}]]}], "+", 
+    FractionBox[
+     RowBox[{"4", "i", " ", "\[Beta]"}], 
+     SubscriptBox["\[CapitalDelta]", "z"]], "-", 
+    RowBox[{
+     SubsuperscriptBox["k", "0", "2"], "(", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "p", ")"}], "-", 
+      SubsuperscriptBox["n", "eff", "2"]}], ")"}]}]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"C", "(", "p", ")"}], "=", 
+   RowBox[{"-", 
+    SubsuperscriptBox["\[Alpha]", "e", 
+     RowBox[{"l", "+", "1"}]]}]}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"D", "(", "p", ")"}], "=", 
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Alpha]", "w", "l"], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "-", "1"}], "l"]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SubsuperscriptBox["\[Alpha]", "x", "l"], "+", 
+       FractionBox[
+        RowBox[{"4", "i", " ", "\[Beta]"}], 
+        SubscriptBox["\[CapitalDelta]", "z"]], "+", 
+       RowBox[{
+        SubsuperscriptBox["k", "0", "2"], "(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "p", ")"}], "-", 
+         SubsuperscriptBox["n", "eff", "2"]}], ")"}]}], ")"}], 
+     SubsuperscriptBox["\[Phi]", "p", "l"]}], "+", 
+    RowBox[{
+     SubsuperscriptBox["\[Alpha]", "e", "l"], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "+", "1"}], "l"]}]}]}], 
+  TraditionalForm]}], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875614092228775`*^9, 3.6875614496239676`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"A", "(", "p", ")"}], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "-", "1"}], 
+      RowBox[{"l", "+", "1"}]]}], "+", 
+    RowBox[{
+     RowBox[{"B", "(", "p", ")"}], 
+     SubsuperscriptBox["\[Phi]", "p", 
+      RowBox[{"l", "+", "1"}]]}], "+", 
+    RowBox[{
+     RowBox[{"C", "(", "p", ")"}], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"p", "+", "1"}], 
+      RowBox[{"l", "+", "1"}]]}]}], "=", 
+   RowBox[{"D", "(", "p", ")"}]}], TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875614576166224`*^9, 3.6875614797025685`*^9}}],
+
+Cell[TextData[{
+ "For ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"p", "=", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ":"
+}], "TextIndent",
+ CellChangeTimes->{{3.6875615332053676`*^9, 3.6875615359595165`*^9}, 
+   3.687561687828637*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Phi]", "0"], "=", 
+    RowBox[{
+     SubscriptBox["\[Phi]", "1"], 
+     SubscriptBox["\[Gamma]", "L"]}]}], ",", "   ", 
+   RowBox[{
+    SubscriptBox["\[Gamma]", "L"], "=", 
+    RowBox[{
+     FractionBox["1", 
+      SubscriptBox["\[Eta]", "1"]], "=", 
+     FractionBox[
+      SubsuperscriptBox["\[Phi]", "1", "l"], 
+      SubsuperscriptBox["\[Phi]", "2", "l"]]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.68756153899811*^9, 3.687561570063053*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["B", "\[Prime]"], "(", "1", ")"}], 
+     SubsuperscriptBox["\[Phi]", "1", 
+      RowBox[{"l", "+", "1"}]]}], "+", 
+    RowBox[{
+     RowBox[{"C", "(", "1", ")"}], 
+     SubsuperscriptBox["\[Phi]", "2", 
+      RowBox[{"l", "+", "1"}]]}]}], "=", 
+   RowBox[{"D", "(", "1", ")"}]}], TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875615999740148`*^9, 3.687561618060794*^9}}],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["B", "\[Prime]"], "(", "1", ")"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      SubsuperscriptBox["\[Alpha]", "w", 
+       RowBox[{"l", "+", "1"}]]}], 
+     SubscriptBox["\[Gamma]", "L"]}], "-", 
+    SubsuperscriptBox["\[Alpha]", "x", 
+     RowBox[{"l", "+", "1"}]], "+", 
+    FractionBox[
+     RowBox[{"4", "i", " ", "\[Beta]"}], 
+     SubscriptBox["\[CapitalDelta]", "z"]], "-", 
+    RowBox[{
+     SubsuperscriptBox["k", "0", "2"], "(", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "1", ")"}], "-", 
+      SubsuperscriptBox["n", "eff", "2"]}], ")"}]}]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"C", "(", "1", ")"}], "=", 
+   RowBox[{"-", 
+    SubsuperscriptBox["\[Alpha]", "e", 
+     RowBox[{"l", "+", "1"}]]}]}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"D", "(", "1", ")"}], "=", 
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Alpha]", "w", "l"], 
+     SubscriptBox["\[Gamma]", "L"], 
+     SubsuperscriptBox["\[Phi]", "1", "l"]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SubsuperscriptBox["\[Alpha]", "x", "l"], "+", 
+       FractionBox[
+        RowBox[{"4", "i", " ", "\[Beta]"}], 
+        SubscriptBox["\[CapitalDelta]", "z"]], "+", 
+       RowBox[{
+        SubsuperscriptBox["k", "0", "2"], "(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "1", ")"}], "-", 
+         SubsuperscriptBox["n", "eff", "2"]}], ")"}]}], ")"}], 
+     SubsuperscriptBox["\[Phi]", "1", "l"]}], "+", 
+    RowBox[{
+     SubsuperscriptBox["\[Alpha]", "e", "l"], 
+     SubsuperscriptBox["\[Phi]", "2", "l"]}]}]}], 
+  TraditionalForm]}], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875616240379314`*^9, 3.6875616724616003`*^9}, {
+  3.6875618771724787`*^9, 3.6875618781639423`*^9}}],
+
+Cell[TextData[{
+ "For ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"p", "=", "M"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ":"
+}], "TextIndent",
+ CellChangeTimes->{{3.6875616798059855`*^9, 3.687561685812965*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Phi]", 
+     RowBox[{"M", "+", "1"}]], "=", 
+    RowBox[{
+     SubscriptBox["\[Phi]", "M"], 
+     SubscriptBox["\[Gamma]", "R"]}]}], ",", "  ", 
+   RowBox[{
+    SubscriptBox["\[Gamma]", "R"], "=", 
+    RowBox[{
+     SubscriptBox["\[Eta]", "M"], "=", 
+     FractionBox[
+      SubsuperscriptBox["\[Phi]", 
+       RowBox[{"M", "-", "1"}], "l"], 
+      SubsuperscriptBox["\[Phi]", "M", "l"]]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875616949252872`*^9, 3.6875617447571507`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"A", "(", "M", ")"}], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"M", "-", "1"}], 
+      RowBox[{"l", "+", "1"}]]}], "+", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["B", "\[Prime]"], "(", "M", ")"}], 
+     SubsuperscriptBox["\[Phi]", "M", 
+      RowBox[{"l", "+", "1"}]]}]}], "=", 
+   RowBox[{"D", "(", "M", ")"}]}], TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875617047169433`*^9, 3.6875617056054525`*^9}, {
+  3.687561753380464*^9, 3.6875617887329483`*^9}}],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"A", "(", "M", ")"}], "=", 
+   RowBox[{
+    RowBox[{"-", 
+     SubsuperscriptBox["\[Alpha]", "w", 
+      RowBox[{"l", "+", "1"}]]}], 
+    SubscriptBox["\[Gamma]", "L"]}]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["B", "\[Prime]"], "(", "M", ")"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      SubsuperscriptBox["\[Alpha]", "e", 
+       RowBox[{"l", "+", "1"}]]}], 
+     SubscriptBox["\[Gamma]", "R"]}], "-", 
+    SubsuperscriptBox["\[Alpha]", "x", 
+     RowBox[{"l", "+", "1"}]], "+", 
+    FractionBox[
+     RowBox[{"4", "i", " ", "\[Beta]"}], 
+     SubscriptBox["\[CapitalDelta]", "z"]], "-", 
+    RowBox[{
+     SubsuperscriptBox["k", "0", "2"], "(", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "M", ")"}], "-", 
+      SubsuperscriptBox["n", "eff", "2"]}], ")"}]}]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"D", "(", "M", ")"}], "=", 
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Alpha]", "w", "l"], 
+     SubsuperscriptBox["\[Phi]", 
+      RowBox[{"M", "-", "1"}], "l"]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SubsuperscriptBox["\[Alpha]", "e", "l"], 
+        SubscriptBox["\[Gamma]", "R"]}], "+", 
+       SubsuperscriptBox["\[Alpha]", "x", "l"], "+", 
+       FractionBox[
+        RowBox[{"4", "i", " ", "\[Beta]"}], 
+        SubscriptBox["\[CapitalDelta]", "z"]], "+", 
+       RowBox[{
+        SubsuperscriptBox["k", "0", "2"], "(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["\[CurlyEpsilon]", "l"], "(", "M", ")"}], "-", 
+         SubsuperscriptBox["n", "eff", "2"]}], ")"}]}], ")"}], 
+     SubsuperscriptBox["\[Phi]", "M", "l"]}]}]}], 
+  TraditionalForm]}], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687561797997912*^9, 3.6875619278677683`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", GridBox[{
+       {
+        RowBox[{
+         SuperscriptBox["B", "\[Prime]"], "(", "1", ")"}], 
+        RowBox[{"C", "(", "1", ")"}], "\[Placeholder]", "\[Placeholder]", 
+        "\[Placeholder]", "\[Placeholder]"},
+       {
+        RowBox[{"A", "(", "2", ")"}], 
+        RowBox[{"B", "(", "2", ")"}], 
+        RowBox[{"C", "(", "2", ")"}], "\[Placeholder]", "\[Placeholder]", 
+        "\[Placeholder]"},
+       {"\[Placeholder]", 
+        RowBox[{"A", "(", "3", ")"}], 
+        RowBox[{"B", "(", "3", ")"}], 
+        RowBox[{"C", "(", "3", ")"}], "\[Placeholder]", "\[Placeholder]"},
+       {"\[Placeholder]", "\[Placeholder]", "...", "...", "...", 
+        "\[Placeholder]"},
+       {"\[Placeholder]", "\[Placeholder]", "\[Placeholder]", 
+        RowBox[{"A", "(", 
+         RowBox[{"M", "-", "1"}], ")"}], 
+        RowBox[{"B", "(", 
+         RowBox[{"M", "-", "1"}], ")"}], 
+        RowBox[{"C", "(", 
+         RowBox[{"M", "-", "1"}], ")"}]},
+       {"\[Placeholder]", "\[Placeholder]", "\[Placeholder]", 
+        "\[Placeholder]", 
+        RowBox[{"A", "(", "M", ")"}], 
+        RowBox[{
+         SuperscriptBox["B", "\[Prime]"], "(", "M", ")"}]}
+      }], ")"}], 
+    RowBox[{"(", GridBox[{
+       {
+        SubsuperscriptBox["\[Phi]", "1", 
+         RowBox[{"l", "+", "1"}]]},
+       {
+        SubsuperscriptBox["\[Phi]", "2", 
+         RowBox[{"l", "+", "1"}]]},
+       {
+        SubsuperscriptBox["\[Phi]", "3", 
+         RowBox[{"l", "+", "1"}]]},
+       {"..."},
+       {
+        SubsuperscriptBox["\[Phi]", 
+         RowBox[{"M", "-", "1"}], 
+         RowBox[{"l", "+", "1"}]]},
+       {
+        SubsuperscriptBox["\[Phi]", "M", 
+         RowBox[{"l", "+", "1"}]]}
+      }], ")"}]}], "=", 
+   RowBox[{"(", GridBox[{
+      {
+       RowBox[{"D", "(", "1", ")"}]},
+      {
+       RowBox[{"D", "(", "2", ")"}]},
+      {
+       RowBox[{"D", "(", "3", ")"}]},
+      {"..."},
+      {
+       RowBox[{"D", "(", 
+        RowBox[{"M", "-", "1"}], ")"}]},
+      {
+       RowBox[{"D", "(", "M", ")"}]}
+     }], ")"}]}], TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.68756198487158*^9, 3.687562130866575*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Pade Approximant operators ", "Subsubsection",
+ CellChangeTimes->{{3.687562184193964*^9, 3.6875621972350993`*^9}, 
+   3.687562268345688*^9}],
+
+Cell["3D Semi-Vectorial analysis", "Subsubsection",
+ CellChangeTimes->{{3.6875624878334184`*^9, 3.687562499465025*^9}, 
+   3.6875625404968543`*^9}],
+
+Cell["3D Fully Vectorial analysis", "Subsubsection",
+ CellChangeTimes->{{3.6875625095525675`*^9, 3.6875625427041907`*^9}}]
+}, Open  ]]
+},
+WindowSize->{798, 808},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+Magnification:>1.3 Inherited,
+FrontEndVersion->"10.2 for Microsoft Windows (64-bit) (2015\:5e747\:67087\
+\:65e5)",
+StyleDefinitions->"Cambria Article.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 101, 1, 107, "Title"],
+Cell[684, 25, 95, 1, 73, "Author"],
+Cell[CellGroupData[{
+Cell[804, 30, 106, 1, 40, "Subsubsection"],
+Cell[913, 33, 681, 18, 70, "DisplayFormulaNumbered"],
+Cell[1597, 53, 213, 6, 26, "TextNoIndent"],
+Cell[CellGroupData[{
+Cell[1835, 63, 100, 1, 37, "Subsubsubsection"],
+Cell[1938, 66, 1230, 37, 158, "DisplayFormulaNumbered"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3205, 108, 103, 1, 37, "Subsubsubsection"],
+Cell[3311, 111, 1186, 35, 158, "DisplayFormulaNumbered"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4534, 151, 93, 1, 37, "Subsubsubsection"],
+Cell[4630, 154, 71, 1, 39, "DisplayFormulaNumbered"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4750, 161, 125, 1, 40, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[4900, 166, 174, 2, 37, "Subsubsubsection"],
+Cell[5077, 170, 691, 21, 67, "DisplayFormulaNumbered"],
+Cell[5771, 193, 434, 13, 44, "DisplayFormulaNumbered"],
+Cell[6208, 208, 238, 6, 39, "DisplayFormulaNumbered"],
+Cell[6449, 216, 1021, 32, 67, "DisplayFormulaNumbered"],
+Cell[7473, 250, 847, 26, 67, "DisplayFormulaNumbered"],
+Cell[8323, 278, 329, 10, 67, "DisplayFormulaNumbered"],
+Cell[8655, 290, 137, 1, 32, "TextIndent"],
+Cell[8795, 293, 677, 21, 67, "DisplayFormulaNumbered"],
+Cell[9475, 316, 645, 19, 67, "DisplayFormulaNumbered"],
+Cell[10123, 337, 134, 1, 32, "TextIndent"],
+Cell[10260, 340, 374, 11, 67, "DisplayFormulaNumbered"],
+Cell[10637, 353, 504, 14, 74, "DisplayFormulaNumbered"],
+Cell[11144, 369, 1190, 38, 70, "DisplayFormulaNumbered"],
+Cell[12337, 409, 556, 16, 45, "DisplayFormulaNumbered"],
+Cell[12896, 427, 906, 28, 60, "DisplayFormulaNumbered"],
+Cell[13805, 457, 653, 20, 183, "DisplayFormulaNumbered"],
+Cell[14461, 479, 1177, 36, 70, "DisplayFormulaNumbered"],
+Cell[15641, 517, 468, 13, 67, "DisplayFormulaNumbered"],
+Cell[16112, 532, 2242, 65, 120, "DisplayFormulaNumbered"],
+Cell[18357, 599, 2215, 68, 133, "DisplayFormulaNumbered"],
+Cell[20575, 669, 1956, 58, 115, "DisplayFormulaNumbered"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22568, 732, 178, 2, 37, "Subsubsubsection"],
+Cell[22749, 736, 1932, 58, 115, "DisplayFormulaNumbered"],
+Cell[24684, 796, 994, 34, 165, "DisplayFormulaNumbered"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25715, 835, 117, 1, 37, "Subsubsubsection"],
+Cell[25835, 838, 641, 19, 67, "DisplayFormulaNumbered"],
+Cell[26479, 859, 299, 9, 34, "TextIndent"],
+Cell[26781, 870, 444, 13, 67, "DisplayFormulaNumbered"],
+Cell[27228, 885, 1137, 35, 68, "DisplayFormulaNumbered"],
+Cell[28368, 922, 358, 10, 39, "TextIndent"],
+Cell[28729, 934, 451, 14, 41, "DisplayFormulaNumbered"],
+Cell[29183, 950, 500, 16, 67, "DisplayFormulaNumbered"],
+Cell[29686, 968, 821, 25, 63, "DisplayFormulaNumbered"],
+Cell[30510, 995, 777, 24, 63, "DisplayFormulaNumbered"],
+Cell[31290, 1021, 753, 23, 88, "DisplayFormulaNumbered"],
+Cell[32046, 1046, 1508, 47, 103, "DisplayFormulaNumbered"],
+Cell[33557, 1095, 498, 17, 44, "TextIndent"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34092, 1117, 122, 1, 37, "Subsubsubsection"],
+Cell[34217, 1120, 569, 16, 82, "TextIndent"],
+Cell[34789, 1138, 355, 11, 41, "DisplayFormulaNumbered"],
+Cell[35147, 1151, 886, 29, 98, "DisplayFormulaNumbered"],
+Cell[36036, 1182, 436, 15, 26, "TextNoIndent"],
+Cell[36475, 1199, 934, 29, 63, "DisplayFormulaNumbered"],
+Cell[37412, 1230, 453, 14, 63, "DisplayFormulaNumbered"],
+Cell[37868, 1246, 336, 10, 64, "DisplayFormulaNumbered"],
+Cell[38207, 1258, 389, 12, 41, "DisplayFormulaNumbered"],
+Cell[38599, 1272, 101, 1, 26, "TextNoIndent"],
+Cell[38703, 1275, 496, 16, 63, "DisplayFormulaNumbered"],
+Cell[39202, 1293, 334, 10, 64, "DisplayFormulaNumbered"],
+Cell[39539, 1305, 410, 13, 41, "DisplayFormulaNumbered"],
+Cell[39952, 1320, 112, 1, 26, "TextNoIndent"],
+Cell[40067, 1323, 1932, 58, 115, "DisplayFormulaNumbered"],
+Cell[42002, 1383, 91, 1, 32, "TextIndent"],
+Cell[42096, 1386, 1913, 57, 174, "DisplayFormulaNumbered"],
+Cell[44012, 1445, 636, 19, 46, "DisplayFormulaNumbered"],
+Cell[44651, 1466, 250, 9, 32, "TextIndent"],
+Cell[44904, 1477, 546, 17, 71, "DisplayFormulaNumbered"],
+Cell[45453, 1496, 487, 14, 43, "DisplayFormulaNumbered"],
+Cell[45943, 1512, 1920, 56, 144, "DisplayFormulaNumbered"],
+Cell[47866, 1570, 222, 8, 32, "TextIndent"],
+Cell[48091, 1580, 579, 18, 71, "DisplayFormulaNumbered"],
+Cell[48673, 1600, 567, 16, 43, "DisplayFormulaNumbered"],
+Cell[49243, 1618, 1912, 58, 145, "DisplayFormulaNumbered"],
+Cell[51158, 1678, 2193, 67, 357, "DisplayFormulaNumbered"]
+}, Open  ]]
+}, Open  ]],
+Cell[53378, 1749, 146, 2, 40, "Subsubsection"],
+Cell[53527, 1753, 147, 2, 31, "Subsubsection"],
+Cell[53677, 1757, 122, 1, 31, "Subsubsection"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

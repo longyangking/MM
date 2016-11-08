@@ -1,0 +1,197 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5603,        188]
+NotebookOptionsPosition[      4850,        161]
+NotebookOutlinePosition[      5245,        178]
+CellTagsIndexPosition[      5202,        175]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Schrodinger equation", "Title",
+ CellChangeTimes->{3.6875578411331444`*^9}],
+
+Cell["Yang Long", "Author",
+ CellChangeTimes->{{3.6875578452809267`*^9, 3.687557846336789*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Model", "Subsubsection",
+ CellChangeTimes->{{3.687557848824397*^9, 3.687557849416979*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"i", " ", 
+    RowBox[{
+     FractionBox["\[PartialD]", 
+      RowBox[{"\[PartialD]", "t"}]], "\[Psi]"}]}], "=", 
+   RowBox[{"H", " ", "\[Psi]"}]}], TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875578529498663`*^9, 3.687557870377158*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"i", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"\[Psi]", "(", 
+       RowBox[{"t", "+", 
+        SubscriptBox["\[CapitalDelta]", "t"]}], ")"}], "-", 
+      RowBox[{"\[Psi]", "(", "t", ")"}]}], 
+     SubscriptBox["\[CapitalDelta]", "t"]]}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"H", "(", 
+      RowBox[{"t", "+", 
+       FractionBox[
+        SubscriptBox["\[CapitalDelta]", "t"], "2"]}], ")"}], 
+     RowBox[{"\[Psi]", "(", 
+      RowBox[{"t", "+", 
+       FractionBox[
+        SubscriptBox["\[CapitalDelta]", "t"], "2"]}], ")"}]}], 
+    "\[TildeTilde]", 
+    RowBox[{
+     FractionBox["1", "2"], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"H", "(", 
+         RowBox[{"t", "+", 
+          SubscriptBox["\[CapitalDelta]", "t"]}], ")"}], 
+        RowBox[{"\[Psi]", "(", 
+         RowBox[{"t", "+", 
+          SubscriptBox["\[CapitalDelta]", "t"]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"H", "(", "t", ")"}], 
+        RowBox[{"\[Psi]", "(", "t", ")"}]}]}], ")"}]}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.687557880530429*^9, 3.6875579446562443`*^9}, {
+  3.687557977544701*^9, 3.687558011049384*^9}, {3.687558125280862*^9, 
+  3.687558127464247*^9}}],
+
+Cell["The difference centers are assumed to be the same", "TextIndent",
+ CellChangeTimes->{{3.687558749676593*^9, 3.687558765428732*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      RowBox[{"i", " ", 
+       RowBox[{"H", "(", 
+        RowBox[{"t", "+", 
+         SubscriptBox["\[CapitalDelta]", "t"]}], ")"}], 
+       FractionBox[
+        SubscriptBox["\[CapitalDelta]", "t"], "2"]}]}], ")"}], 
+    RowBox[{"\[Psi]", "(", 
+     RowBox[{"t", "+", 
+      SubscriptBox["\[CapitalDelta]", "t"]}], ")"}]}], "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"i", " ", 
+       RowBox[{"H", "(", "t", ")"}], 
+       FractionBox[
+        SubscriptBox["\[CapitalDelta]", "t"], "2"]}]}], ")"}], 
+    RowBox[{"\[Psi]", "(", "t", ")"}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875580364723897`*^9, 3.6875580633025904`*^9}, {
+   3.6875581351113496`*^9, 3.687558160421913*^9}, 3.6875582041431694`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["e", 
+     RowBox[{
+      RowBox[{"-", "i"}], " ", 
+      RowBox[{"H", "(", 
+       RowBox[{"t", "+", 
+        SubscriptBox["\[CapitalDelta]", "t"]}], ")"}], 
+      FractionBox[
+       SubscriptBox["\[CapitalDelta]", "t"], "2"]}]], 
+    RowBox[{"\[Psi]", "(", 
+     RowBox[{"t", "+", 
+      SubscriptBox["\[CapitalDelta]", "t"]}], ")"}]}], "=", 
+   RowBox[{
+    SuperscriptBox["e", 
+     RowBox[{"i", " ", 
+      RowBox[{"H", "(", "t", ")"}], 
+      FractionBox[
+       SubscriptBox["\[CapitalDelta]", "t"], "2"]}]], 
+    RowBox[{"\[Psi]", "(", "t", ")"}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875582134948435`*^9, 3.687558265688678*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Psi]", "(", 
+    RowBox[{"t", "+", 
+     SubscriptBox["\[CapitalDelta]", "t"]}], ")"}], "=", 
+   RowBox[{
+    SuperscriptBox["e", 
+     RowBox[{"i", " ", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"H", "(", 
+         RowBox[{"t", "+", 
+          SubscriptBox["\[CapitalDelta]", "t"]}], ")"}], "+", 
+        RowBox[{"H", "(", "t", ")"}]}], "2"], 
+      SubscriptBox["\[CapitalDelta]", "t"]}]], 
+    RowBox[{"\[Psi]", "(", "t", ")"}]}]}], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6875583326545315`*^9, 3.687558378782199*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1584, 817},
+WindowMargins->{{707, Automatic}, {Automatic, 45}},
+Magnification:>1.4 Inherited,
+FrontEndVersion->"10.2 for Microsoft Windows (64-bit) (2015\:5e747\:67087\
+\:65e5)",
+StyleDefinitions->"Cambria Article.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 81, 1, 115, "Title"],
+Cell[664, 25, 95, 1, 81, "Author"],
+Cell[CellGroupData[{
+Cell[784, 30, 96, 1, 43, "Subsubsection"],
+Cell[883, 33, 307, 8, 71, "DisplayFormulaNumbered"],
+Cell[1193, 43, 1270, 39, 74, "DisplayFormulaNumbered"],
+Cell[2466, 84, 137, 1, 35, "TextIndent"],
+Cell[2606, 87, 858, 25, 70, "DisplayFormulaNumbered"],
+Cell[3467, 114, 742, 23, 52, "DisplayFormulaNumbered"],
+Cell[4212, 139, 610, 18, 52, "DisplayFormulaNumbered"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
