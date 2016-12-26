@@ -11,9 +11,9 @@ def fitfun(chrome):
     #for i in range(n):
     #    if chrome[i] is 1:
     #        num = num + 10
-    return 10*sum(chrome)
+    return sum(chrome)
 
 if __name__=='__main__':
-    ga = GA(30,20,fitfun,probcross=0.8,probmutate=0.2,lencross=2,maxiteration=100,bestspliter=5)
+    ga = GA(30,10,fitfun,probcross=0.8,probmutate=0.1,maxiteration=200)
     ga.start()
-    print sum(ga.result(0))
+    print fitfun(ga.result(0))
