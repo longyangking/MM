@@ -18,11 +18,11 @@ end
 
 figure(1);
 title('Property and players');
-bar(peoples); xlim([1,100]);
+bar(peoples); xlim([1,numofpeople]);
 
 figure(2);
 title('Rich and poverty');
-bar(sort(peoples)); xlim([1,100]);
+bar(sort(peoples)); xlim([1,numofpeople]);
 
 figure(3);
 title('Redistribution of property');
